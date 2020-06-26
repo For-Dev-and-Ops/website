@@ -1,0 +1,36 @@
+---
+title: Linux Ivoire 
+layout: default
+bodyClass: page-home
+---
+
+<div class="intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Présentation de l'organisation Linux Ivoire</h1>
+        <p>
+          Our business helps hundreds of customers with their accounting and
+          taxation needs each year.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container pb-6">
+  <div class="row">
+    {% for presentation in site.presentations %}
+    <div class="col-12 col-md-4 mb-1">
+      <div class="presentation presentation-summary">
+        <div class="presentation-content">
+          <h2 class="presentation-title">
+            <a href="{{site.baseurl}}{{ presentation.url }}">{{ presentation.title }}</a>
+          </h2>
+          {{ presentation.content | markdownify | strip_html | truncate: 100 }}
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
